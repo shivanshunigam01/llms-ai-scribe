@@ -164,10 +164,10 @@ const Index = () => {
       {toast && <Toast toast={toast} onClose={hideToast} />}
       <div className="max-w-3xl mx-auto text-center space-y-8">
         <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 bg-clip-text text-transparent">
-          Generate Your LLMs.txt Instantly
+          Generate Your LLMs.txt Now
         </h1>
         <p className="text-xl text-slate-800 font-medium">
-          Protect your content. Help AI understand your site.
+          Protect your content. Let AI understand your website.
         </p>
 
         <div className="bg-white/20 backdrop-blur-sm rounded-lg p-1 border border-white/30">
@@ -179,31 +179,32 @@ const Index = () => {
             className="bg-white border-0 text-slate-800 placeholder:text-slate-500/70 h-14 text-lg"
           />
         </div>
+        <div className="flex justify-between items-center w-full mt-4">
+          <div className="flex items-center space-x-2">
+            <Label className="text-slate-800 font-medium">Full Text</Label>
+            <Switch
+              checked={showFullText}
+              onCheckedChange={setShowFullText}
+              className="data-[state=checked]:bg-slate-800"
+            />
+          </div>
 
-        <div className="flex justify-center items-center space-x-4">
-          <Label className="text-slate-800 font-medium">Full Text</Label>
-          <Switch
-            checked={showFullText}
-            onCheckedChange={setShowFullText}
-            className="data-[state=checked]:bg-slate-800"
-          />
+          <Button
+            onClick={generateLLMsTxt}
+            disabled={isGenerating}
+            className="h-12 px-6 text-lg bg-gradient-to-r from-slate-800 to-slate-600 text-white"
+          >
+            {isGenerating ? (
+              <>
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Generating...
+              </>
+            ) : (
+              <>
+                <Rocket className="mr-2 h-5 w-5" /> Generate Now
+              </>
+            )}
+          </Button>
         </div>
-
-        <Button
-          onClick={generateLLMsTxt}
-          disabled={isGenerating}
-          className="w-full h-14 text-lg bg-gradient-to-r from-slate-800 to-slate-600 text-white"
-        >
-          {isGenerating ? (
-            <>
-              <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Generating...
-            </>
-          ) : (
-            <>
-              <Rocket className="mr-2 h-5 w-5" /> Generate Now
-            </>
-          )}
-        </Button>
 
         {generated.llmstxt && (
           <Card className="bg-white/20 backdrop-blur-sm rounded-lg p-6 mt-6">
@@ -218,12 +219,14 @@ const Index = () => {
                 <Button
                   variant="outline"
                   onClick={() => copyText(generated.llmstxt)}
+                  className="bg-white text-slate-800 border border-slate-300 hover:bg-slate-100"
                 >
                   <Copy className="h-4 w-4 mr-2" /> Copy
                 </Button>
                 <Button
                   variant="outline"
                   onClick={() => downloadText(generated.llmstxt, "llms.txt")}
+                  className="bg-white text-slate-800 border border-slate-300 hover:bg-slate-100"
                 >
                   <Download className="h-4 w-4 mr-2" /> Download
                 </Button>
@@ -247,6 +250,7 @@ const Index = () => {
                 <Button
                   variant="outline"
                   onClick={() => copyText(generated.llmsfulltxt)}
+                  className="bg-white text-slate-800 border border-slate-300 hover:bg-slate-100"
                 >
                   <Copy className="h-4 w-4 mr-2" /> Copy
                 </Button>
