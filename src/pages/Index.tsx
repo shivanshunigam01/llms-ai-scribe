@@ -219,14 +219,14 @@ const Index = () => {
                 <Button
                   variant="outline"
                   onClick={() => copyText(generated.llmstxt)}
-                  className="bg-white text-slate-800 border border-slate-300 hover:bg-slate-100"
+                  className="bg-white text-slate-800 border border-slate-300 hover:bg-slate-800"
                 >
                   <Copy className="h-4 w-4 mr-2" /> Copy
                 </Button>
                 <Button
                   variant="outline"
                   onClick={() => downloadText(generated.llmstxt, "llms.txt")}
-                  className="bg-white text-slate-800 border border-slate-300 hover:bg-slate-100"
+                  className="bg-white text-slate-800 border border-slate-300 hover:bg-slate-800"
                 >
                   <Download className="h-4 w-4 mr-2" /> Download
                 </Button>
@@ -250,7 +250,7 @@ const Index = () => {
                 <Button
                   variant="outline"
                   onClick={() => copyText(generated.llmsfulltxt)}
-                  className="bg-white text-slate-800 border border-slate-300 hover:bg-slate-100"
+                  className="bg-white text-slate-800 border border-slate-300 hover:bg-slate-800"
                 >
                   <Copy className="h-4 w-4 mr-2" /> Copy
                 </Button>
