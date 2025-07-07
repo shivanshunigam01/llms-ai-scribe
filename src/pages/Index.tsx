@@ -99,11 +99,14 @@ const Index = () => {
     setGenerated({ llmstxt: "", llmsfulltxt: "" });
 
     try {
-      const res = await fetch("http://localhost:3000/generate-llms-txt", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ url, showFullText }),
-      });
+      const res = await fetch(
+        "https://llms-backend-1.onrender.com/generate-llms-txt",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ url, showFullText }),
+        }
+      );
 
       const json = await res.json();
       const response = json.data;
