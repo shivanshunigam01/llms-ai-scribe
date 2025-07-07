@@ -160,15 +160,11 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yellow-400 via-amber-400 to-orange-400 px-4 py-20">
+    <div className="min-h-screen bg-gradient-to-br from-[#FFB100] via-[#FFB100] to-[#FFB100] px-4 py-20">
       {toast && <Toast toast={toast} onClose={hideToast} />}
       <div className="max-w-3xl mx-auto text-center space-y-8">
-        <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 bg-clip-text text-transparent">
-          Generate Your LLMs.txt Now
-        </h1>
-        <p className="text-xl text-slate-800 font-medium">
-          Protect your content. Let AI understand your website.
-        </p>
+        <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 bg-clip-text text-transparent"></h1>
+        <p className="text-xl text-slate-800 font-medium"></p>
 
         <div className="bg-white/20 backdrop-blur-sm rounded-lg p-1 border border-white/30">
           <Input
